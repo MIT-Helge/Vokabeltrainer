@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vokabeltest</title>
+</head>
+<body>
+    <h1>Vokabeltest</h1>
+
+    <form id="vocabulary-test-form" method="post" action="/losung">
+        <input type="hidden" name="file" value="{{ file }}">
+        {% for vokabel in vokabeltest %}
+            <label>{{ vokabel.wort }}: {{ vokabel.losung }} das war {{vokabel.ergebniss}} deine Lösung war {{vokabel.deins}}</label>
+            <br>
+        {% endfor %}
+
+        <button type="submit" id="check-button">Abgeben</button>
+    </form>
+</body>
+</html>
