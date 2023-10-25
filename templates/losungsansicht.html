@@ -9,12 +9,17 @@
     <form id="vocabulary-test-form" method="post" action="/losung">
         <input type="hidden" name="file" value="{{ file }}">
         {% for vokabel in vokabeltest %}
-
-            <label>{{ vokabel.wort }}: {{ vokabel.losung }} das war {{vokabel.ergebniss}}{% if vokabel.ergebniss == 'Falsch' %} deine Lösung war {{vokabel.deins}}{% endif %}</label>
+            <label>{{ vokabel.wort }}: </label>
+            <input type="text" name="{{ vokabel }}" placeholder="Lösung eingeben">
+        {% if vokabel.ergebnis=='Richtig' %}
+        I/
+        {% else %}
+        X
+        {% endif %}
             <br>
         {% endfor %}
 
-        <button type="submit" id="check-button">Abgeben</button>
+        Du hast {{Prozentzahl}} richtig.
     </form>
 </body>
 </html>

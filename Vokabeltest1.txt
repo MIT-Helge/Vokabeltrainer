@@ -1,3 +1,4 @@
 Hund;dog
-cat;Katze
-bli;blub
+Katze;cat
+Maus;mouse
+Vogel;bird

@@ -22,21 +22,25 @@ def test(test):
 def losung():
     print(request.form)
     if request.method == 'POST':
+        AnzahlderVokabeln= len(request.form)-1
+        AnzahlderFehler= 0
         vokabeltest = []
         vokabelheft = loadFile(request.form.get('file'))
         for antwort in request.form:
             if antwort != 'file':
                 eintrag = {'wort': antwort, 'deins': request.form.get(antwort), 'losung': vokabelheft[antwort],
-                           'ergebniss': "Falsch"}
+                           'ergebnis': "Falsch"}
                 if request.form.get(antwort) == vokabelheft[antwort]:
                     print('Richtig')
-                    eintrag['ergebniss'] = "Richtig"
+                    eintrag['ergebnis'] = "Richtig"
                 else:
                     print('Falsch')
-                    eintrag['ergebniss'] = "Falsch"
+                    eintrag['ergebnis'] = "Falsch"
+                    AnzahlderFehler=AnzahlderFehler+1
                 vokabeltest.append(eintrag)
-        print(vokabeltest)
-        return render_template('losungsansicht.html', vokabeltest=vokabeltest)
+        print(AnzahlderFehler)
+        print(AnzahlderVokabeln)
+        return render_template('losungsansicht.html', vokabeltest=vokabeltest, Prozentzahl=(AnzahlderFehler/100*AnzahlderVokabeln))
 
     return
 
