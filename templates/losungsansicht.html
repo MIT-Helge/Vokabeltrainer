@@ -2,6 +2,14 @@
 <html>
 <head>
     <title>Vokabeltest</title>
+    <style>
+        .green {
+        background-color: green;
+    }
+        .red {
+        background-color: red;
+    }
+    </style>
 </head>
 <body>
     <h1>Vokabeltest</h1>
@@ -10,11 +18,11 @@
         <input type="hidden" name="file" value="{{ file }}">
         {% for vokabel in vokabeltest %}
             <label>{{ vokabel.wort }}: </label>
-            <input type="text" name="{{ vokabel }}" placeholder="Lösung eingeben">
+            <input type="text" name="{{ vokabel }}" value="{{ vokabel.deins }}"
         {% if vokabel.ergebnis=='Richtig' %}
-        I/
+         class="green" >I/
         {% else %}
-        X
+         class="red" >X
         {% endif %}
             <br>
         {% endfor %}

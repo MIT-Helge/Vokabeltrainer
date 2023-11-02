@@ -18,6 +18,10 @@ def test(test):
     vokabelheft = loadFile(test)
     return render_template('index.html', vokabeltest=vokabelheft.keys(), file=test)
 
+@app.route('/')
+def testt():
+    return render_template('Helge.html')
+
 @app.route('/losung', methods=['POST'])
 def losung():
     print(request.form)
