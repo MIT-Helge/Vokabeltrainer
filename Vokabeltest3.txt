@@ -1,0 +1,4 @@
+Baum;tree
+Flugzeug;plane
+Ball;ball
+Wolke;cloud

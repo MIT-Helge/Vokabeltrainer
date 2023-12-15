@@ -108,12 +108,15 @@ def losung():
         # Datum_Tag_Klasse_Schüler_Test
         AktuellesDatum = datetime.now().strftime("%Y_%m_%d")
         voller_pfad = os.path.join(os.getcwd(), AktuellesDatum)
-        #if not os.path.exists(voller_pfad):
-           #os.makedirs(voller_pfad)
-        return render_template('losungsansicht.html', vokabeltest=vokabeltest,
+        # if not os.path.exists(voller_pfad):
+        # os.makedirs(voller_pfad)
+        Dateiname = request.form.get("klasse") + " " + request.form.get("name") + " " + request.form.get("file")
+        print(Dateiname)
+        Webseite=render_template('losungsansicht.html', vokabeltest=vokabeltest,
                                Prozentzahl=prozentrichtig,
                                Note=note, prognose=prognose)
-
+        print(Webseite)
+        return Webseite
     return
 
 
