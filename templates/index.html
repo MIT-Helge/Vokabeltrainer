@@ -4,17 +4,26 @@
     <title>Vokabeltest</title>
 </head>
 <body>
-    <h1>Vokabeltest</h1>
+<h1>Vokabeltest</h1>
 
-    <form id="vocabulary-test-form" method="post" action="/losung">
-        <input type="hidden" name="file" value="{{ file }}">
-        {% for vokabel in vokabeltest %}
-            <label>{{ vokabel }}: </label>
-            <input type="text" name="{{ vokabel }}" placeholder="Lösung eingeben">
-            <br>
-        {% endfor %}
-
-        <button type="submit" id="check-button">Abgeben</button>
-    </form>
+<form id="vocabulary-test-form" method="post" action="/losung">
+    <label>Name: </label>
+    <input type="text" name="name" placeholder="Vorname, Nachname">
+    <br>
+    <label>Klasse: </label>
+    <input type="text" name="klasse" placeholder="z.B.: 5a">
+    <p>Prognose:</p>         <input type="radio" id="esa" name="prognose" value="ESA"> <label
+        for="esa">ESA</label><br> <input type="radio" id="msa" name="prognose" value="MSA" checked> <label
+        for="msa">MSA</label><br> <input type="radio" id="ahr" name="prognose" value="AHR"> <label
+        for="ahr">AHR</label><br><br>
+    <input type="hidden" name="file" value="{{ file }}">
+    {% for vokabel in vokabeltest %}
+    <label>{{ vokabel }}: </label>
+    <input type="text" name="{{ vokabel }}" placeholder="Lösung eingeben">
+    <br>
+    {% endfor %}
+<br>
+    <button type="submit" id="check-button">Abgeben</button>
+</form>
 </body>
 </html>

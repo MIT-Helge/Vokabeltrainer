@@ -4,30 +4,31 @@
     <title>Vokabeltest</title>
     <style>
         .green {
-        background-color: green;
-    }
+            background-color: green;
+        }
+
         .red {
-        background-color: red;
-    }
+            background-color: red;
+        }
     </style>
 </head>
 <body>
-    <h1>Vokabeltest</h1>
+<h1>Vokabeltest</h1>
 
-    <form id="vocabulary-test-form" method="post" action="/losung">
-        <input type="hidden" name="file" value="{{ file }}">
-        {% for vokabel in vokabeltest %}
-            <label>{{ vokabel.wort }}: </label>
-            <input type="text" name="{{ vokabel }}" value="{{ vokabel.deins }}"
-        {% if vokabel.ergebnis=='Richtig' %}
-         class="green" >I/
-        {% else %}
-         class="red" >X
-        {% endif %}
-            <br>
-        {% endfor %}
-
-        Du hast {{Prozentzahl}} richtig.
-    </form>
+<form id="vocabulary-test-form" method="post" action="/losung">
+    <input type="hidden" name="file" value="{{ file }}">
+    {% for vokabel in vokabeltest %}
+    <label>{{ vokabel.wort }}:  </label>
+    <input type="text" name="{{ vokabel }}" value="{{ vokabel.deins }}"
+           {% if vokabel.ergebnis=='Richtig' %}
+           class="green">
+    {% else %}
+    class="red" > {{ vokabel.losung }}
+    {% endif %}
+    <br>
+    {% endfor %}
+    <br>
+    Du hast {{Prozentzahl}} % richtig. Das entspricht einer {{prognose}} {{Note}}.
+</form>
 </body>
 </html>
