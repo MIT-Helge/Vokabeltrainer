@@ -36,15 +36,15 @@ def notenberechnungESA(prozent):
 
 
 def notenberechnungAHR(prozent):
-    if prozent >= 92:
+    if prozent >= 95:
         return 1
-    elif prozent >= 81:
+    elif prozent >= 85:
         return 2
-    elif prozent >= 67:
+    elif prozent >= 68:
         return 3
     elif prozent >= 50:
         return 4
-    elif prozent >= 30:
+    elif prozent >= 24:
         return 5
     else:
         return 6

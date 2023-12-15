@@ -1,4 +1,20 @@
-Hund;dog
-Katze;cat
-Maus;mouse
-Vogel;bird
+Anfang, Beginn;beginning
+verkaufen;sell
+Packung, Paket, Schachtel;packet (of)
+kosten;cost
+Politik, Richtlinie(n), Bestimmung(en);policy
+immer mehr;more and more
+gegen;against
+regulieren, bestimmen;control
+unterrichten, lehren;teach
+Talent, Begabung;talent
+Wirtschaftskunde;business studies
+etwas nicht gut können, nicht gut in etwas sein;be no good at something
+Verkaeufer/in;salesperson
+Wettbewerb;competition
+an etwas teilnehmen, bei etwas mitmachen;take part in something
+Information(en) (über);information (about)
+Herausforderung;challenge
+Wohltätigkeit, wohltätige Zwecke, Wohlfahrtsorganisation;charity
+Gewinn, Profit;profit
+so viel, wie (du kannst);as much as (you can)
